@@ -21,6 +21,11 @@ jobs:
                 APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
             run: echo "My $APP_ID runs successfully and my $APP_PASSWORD Hides Successfully!"
 
+          - name: Demo file Creation
+            run: |
+                  mkdir demo-app
+                  echo "my sample folder" >demo-app/demo.txt
+
           - name: Upload Demo files and folders
             uses: actions/upload-artifact@v7
             with:
@@ -52,3 +57,9 @@ jobs:
                   echo "The repository ${{ github.repository }} clone successfully" >demo-app/demo.txt
                   echo "The workspace is ${{ github.workspace}}" >demo-app/demo.txt
                   echo "The job status is now ${{ job.status }}" >demo-app/demo.txt
+
+            - name: Upload Demo files and folders
+              uses: actions/upload-artifact@v7
+              with:
+                  name: demo-artifacts-folder01
+                  path: .
