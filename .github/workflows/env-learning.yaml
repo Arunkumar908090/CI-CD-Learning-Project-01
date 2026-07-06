@@ -2,14 +2,11 @@ name: Env-secrets and Variables learning side
 
 on:
     push:
-        
-steps:
-  - name: Demo file Creation
-    run: |
-       mkdir demo-app
-       echo "my sample folder" >demo-app/demo.txt
+
+
 
 jobs:
+    
     build:
         runs-on: ubuntu-latest
         
@@ -43,6 +40,10 @@ jobs:
         needs: test
 
         steps:
+            - name: Demo file Creation
+              run: |
+                  mkdir demo-app
+                  echo "my sample folder" >demo-app/demo.txt
             - name: Run Github services 
               run: |
                   echo "The job triggered to ${{ github.event_name }}" >demo-app/demo.txt
