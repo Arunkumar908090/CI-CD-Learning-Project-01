@@ -1,4 +1,4 @@
-name: Env's and Variables leraning side
+name: Env-secrets and Variables learning side
 
 on:
     push:
@@ -14,5 +14,6 @@ jobs:
 
           - name: Env setup
             env:
-                APP_ID: Demo App
-            run: echo "My $APP_ID runs successfully!"
+                APP_ID: ${{ vars.APP_ID }}
+                APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+            run: echo "My $APP_ID runs successfully and my $APP_PASSWORD Hides Successfully!"
