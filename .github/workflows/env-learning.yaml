@@ -2,6 +2,12 @@ name: Env-secrets and Variables learning side
 
 on:
     push:
+        
+steps:
+  - name: Demo file Creation
+    run: |
+       mkdir demo-app
+       echo "my sample folder" >demo-app/demo.txt
 
 jobs:
     build:
@@ -17,11 +23,6 @@ jobs:
                 APP_ID: ${{ vars.APP_ID }}
                 APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
             run: echo "My $APP_ID runs successfully and my $APP_PASSWORD Hides Successfully!"
-
-          - name: Demo file Creation
-            run: |
-                mkdir demo-app
-                echo "my sample folder" >demo-app/demo.txt
 
           - name: Upload Demo files and folders
             uses: actions/upload-artifact@v7
