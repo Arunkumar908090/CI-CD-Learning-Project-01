@@ -28,3 +28,10 @@ jobs:
             with:
                 name: demo-artifacts-folder
                 path: .
+    
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Run Test
+              run: echo "Test Job"
