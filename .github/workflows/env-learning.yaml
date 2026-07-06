@@ -48,7 +48,7 @@ jobs:
             - name: Demo file Creation
               run: |
                   mkdir demo-app
-                  echo "my sample folder" >demo-app/demo.txt
+                  echo "my sample folder" >demo-app/demo1.txt
             - name: Run Github services 
               run: |
                   echo "The job triggered to ${{ github.event_name }}" >demo-app/demo.txt
@@ -59,7 +59,7 @@ jobs:
                   echo "The job status is now ${{ job.status }}" >>demo-app/demo.txt
 
             - name: Upload Demo files and folders
-              uses: actions/upload-artifact@v7
+              uses: actions/download-artifact@v7
               with:
-                  name: demo-artifacts-folder01
+                  name: demo-artifacts-folder
                   path: .
