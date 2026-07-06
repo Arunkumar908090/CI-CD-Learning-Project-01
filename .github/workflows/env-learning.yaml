@@ -45,21 +45,19 @@ jobs:
         needs: test
 
         steps:
-            - name: Demo file Creation
-              run: |
-                  mkdir demo-app
-                  echo "my sample folder" >demo-app/demo1.txt
+            - name: Upload Demo files and folders
+              uses: actions/download-artifact@v7
+              with:
+                  name: demo-artifacts-folder
+                  path: .
+        
             - name: Run Github services 
               run: |
-                  echo "The job triggered to ${{ github.event_name }}" >demo-app/demo.txt
+                  echo "The job triggered to ${{ github.event_name }}" >>demo-app/demo.txt
                   echo "The job running on ${{ runner.os }}" >>demo-app/demo.txt
                   echo "The name of branch is ${{ github.ref }}" >>demo-app/demo.txt
                   echo "The repository ${{ github.repository }} clone successfully" >>demo-app/demo.txt
                   echo "The workspace is ${{ github.workspace}}" >>demo-app/demo.txt
                   echo "The job status is now ${{ job.status }}" >>demo-app/demo.txt
 
-            - name: Upload Demo files and folders
-              uses: actions/download-artifact@v7
-              with:
-                  name: demo-artifacts-folder
-                  path: .
+            
