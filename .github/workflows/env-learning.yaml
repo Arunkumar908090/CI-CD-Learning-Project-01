@@ -1,0 +1,13 @@
+name: Second CI Pipeline
+
+on:
+    push:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        
+        steps:
+          - uses: actions/checkout@v4
+          - name: Script for Second Pipeline
+            run: echo "My Second Pipeline runs successfully!"
