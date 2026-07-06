@@ -1,4 +1,4 @@
-name: Second CI Pipeline
+name: Env's and Variables leraning side
 
 on:
     push:
@@ -8,6 +8,11 @@ jobs:
         runs-on: ubuntu-latest
         
         steps:
-          - uses: actions/checkout@v4
-          - name: Script for Second Pipeline
-            run: echo "My Second Pipeline runs successfully!"
+
+          - name: Script for Checking Machine
+            run: echo "My Machine runs successfully!"
+
+          - name: Env setup
+            env:
+                APP_ID: Demo App
+            run: echo "My $APP_ID runs successfully!"
