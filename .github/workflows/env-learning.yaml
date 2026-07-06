@@ -60,4 +60,10 @@ jobs:
                   echo "The workspace is ${{ github.workspace}}" >>demo-app/demo.txt
                   echo "The job status is now ${{ job.status }}" >>demo-app/demo.txt
 
+            - name: Upload Demo files and folders-updated
+              uses: actions/upload-artifact@v7
+              with:
+                  name: demo-artifacts-folder-updated
+                  path: .
+
             
