@@ -58,15 +58,26 @@ jobs:
                 distribution: 'temurin' 
                 java-version: '21'
 
-          - name: Build and Test App
+          - name: Build and Test JAR App
             working-directory: docker/app1-hello/springboot/hello-spring
             run: mvn -B clean package -DskipTests
 
-          - name: Verify the reports
-            uses: actions/upload-artifact@v7
-            with: 
-                name: test-reports
-                path: docker/app1-hello/springboot/hello-spring/target/surefire-reports
+          - name: Docker Login
+            uses: docker/login-action@v4
+            with:
+                username: ${{ vars.DOCKERHUB_USERNAME }}
+                password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+          - name: To Build and Push Docker Images
+            uses: docker/build-push-action@v7
+            with:
+                context: docker/app1-hello/springboot/hello-spring
+                push: true
+                tags: |
+                    ${{ vars.DOCKERHUB_USERNAME }}/hello-spring:latest
+                    ${{ vars.DOCKERHUB_USERNAME }}/hello-spring:${{ github.sha }}
+
+            
 
 
 
