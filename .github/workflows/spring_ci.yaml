@@ -1,0 +1,41 @@
+name: Setup for Spring Boot Application for Docker 
+
+on:
+    push:
+
+jobs:
+    build-steps-sample:
+        runs-on: ubuntu-latest
+        
+        steps:
+          - name: Check the Code
+            run: echo "To Check the Code"
+
+          - name: Setup Environment for JDK APP
+            run: echo ""
+
+          - name: Build and Test App
+            run: echo ""
+
+          - name: Upload Test Samples
+            run: echo ""
+
+    run-workflow:
+        runs-on: ubuntu-latest
+        needs: build-steps-sample
+        
+        steps:
+          - name: Check the Code
+            uses: actions/checkout@v6
+
+          - name: Setup Environment for JDK APP
+            uses: actions/setup-java@v5
+            with:
+                distribution: 'temurin' 
+                java-version: '21'
+
+          - name: Build and Test App
+            run: echo ""
+
+
+
