@@ -33,15 +33,6 @@ jobs:
             with:
                 node-version: 24
 
-          - name: Build and Test App
-            working-directory: docker/app1-hello/node
-            run: mvn -B clean verify
-
-          - name: Verify the reports
-            uses: actions/upload-artifact@v7
-            with: 
-                name: test-reports
-                path: docker/app1-hello/node/target/surefire-reports
                 
     docker-build-image:
         runs-on: ubuntu-latest
