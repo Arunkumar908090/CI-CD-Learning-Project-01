@@ -1,7 +1,7 @@
 name: Pipeline for jenkins 
 
 on:
-    workflow_dispatch:
+    push:
 
 jobs:
     build:
@@ -12,6 +12,7 @@ jobs:
           - name: Script for Second Pipeline
             run: echo "My Second Pipeline runs successfully!"
 
-          - name: Check Jenkins Connection
+          - name: Check Jenkins Connections 
             run: |
-                curl -v "${{ vars.JENKINS_URL }}/login"
+                echo "URL: ${{ vars.JENKINS_URL }}"
+                echo "USER: ${{ vars.JENKINS_USER }}"
