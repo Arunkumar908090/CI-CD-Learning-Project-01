@@ -62,7 +62,13 @@ jobs:
                     ${{ vars.DOCKERHUB_USERNAME }}/hello-node:latest
                     ${{ vars.DOCKERHUB_USERNAME }}/hello-node:${{ github.sha }}
 
-            
+          - name: Trigger Jenkins
+            run: |
+                curl -X POST \
+                "${{ vars.JENKINS_URL }}/job/jenkins-for-hello/buildWithParameters?token=${{ secrets.JENKINS_TRIGGER_TOKEN }}&BRANCH=main" \
+                --user "${{ vars.JENKINS_USER }}:${{ secrets.JENKINS_PASSWORD }}"
+
+                    
 
 
 
