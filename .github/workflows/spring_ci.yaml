@@ -109,4 +109,4 @@ jobs:
               run: kubectl get nodes
 
             - name: Deploy to AWS
-              run: kubectl apply -f docker/k8s/deployment.yaml            
+              run: kubectl apply -f docker/k8s/deployment.yaml          
