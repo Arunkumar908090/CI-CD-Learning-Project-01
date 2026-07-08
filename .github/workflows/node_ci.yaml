@@ -47,10 +47,6 @@ jobs:
             with:
                 node-version: 24
 
-          - name: Build and Test Node App
-            working-directory: docker/app1-hello/node
-            run: mvn -B clean package -DskipTests
-
           - name: Docker Login
             uses: docker/login-action@v4
             with:
