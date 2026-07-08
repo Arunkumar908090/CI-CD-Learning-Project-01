@@ -1,7 +1,7 @@
 name: Env-secrets and Variables learning side
 
 on:
-    push:
+    workflow_dispatch:
 
 
 
