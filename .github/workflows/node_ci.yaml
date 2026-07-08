@@ -1,11 +1,11 @@
 name: Setup for Node.js Application for Docker 
 
 on:
-    workflow_dispatch:
+    push:
 
 jobs:
     build-steps-sample:
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
         
         steps:
           - name: Check the Code
@@ -21,7 +21,7 @@ jobs:
             run: echo ""
 
     run-workflow:
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
         needs: build-steps-sample
         
         steps:
@@ -35,7 +35,7 @@ jobs:
 
                 
     docker-build-image:
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
         needs: run-workflow
         
         steps:
