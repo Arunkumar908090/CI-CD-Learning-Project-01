@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Hello Jenkins') {
+            steps {
+                echo 'Hello from Jenkins!'
+            }
+        }
+
+        stage('Check Runner') {
+            steps {
+                sh 'pwd'
+                sh 'whoami'
+                sh 'hostname'
+            }
+        }
+
+    }
+}
