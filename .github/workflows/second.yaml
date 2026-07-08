@@ -12,7 +12,13 @@ jobs:
           - name: Script for Second Pipeline
             run: echo "My Second Pipeline runs successfully!"
 
-          - name: Check Jenkins Connections 
+          - name: Check Jenkins Connectionss 
             run: |
                 echo "URL: ${{ vars.JENKINS_URL }}"
                 echo "USER: ${{ vars.JENKINS_USER }}"
+
+          - name: Test Jenkins Authentication
+            run: |
+                curl -i \
+                --user "${{ vars.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }}" \
+                "${{ vars.JENKINS_URL }}/whoAmI/api/json"
