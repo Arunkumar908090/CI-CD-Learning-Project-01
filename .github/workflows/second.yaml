@@ -1,7 +1,7 @@
-name: Second CI Pipeline
+name: Pipeline for jenkins 
 
 on:
-    workflow_dispatch:
+    push:
 
 jobs:
     build:
@@ -11,3 +11,7 @@ jobs:
           - uses: actions/checkout@v4
           - name: Script for Second Pipeline
             run: echo "My Second Pipeline runs successfully!"
+
+          - name: Check Jenkins Connection
+            run: |
+                curl -v "${{ vars.JENKINS_URL }}/login"
