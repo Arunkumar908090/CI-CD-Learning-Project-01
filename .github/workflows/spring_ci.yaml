@@ -95,6 +95,9 @@ jobs:
 
             - name: Setup Kubectl
               uses: azure/setup-kubectl@v4
+
+            - name: Verify AWS Identity
+              run: aws sts get-caller-identity
              
             - name: Update KubeConfig for EKS
               run: |
