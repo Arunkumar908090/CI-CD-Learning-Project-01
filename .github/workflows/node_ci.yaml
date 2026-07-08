@@ -61,7 +61,6 @@ jobs:
                 tags: |
                     ${{ vars.DOCKERHUB_USERNAME }}/hello-node:latest
                     ${{ vars.DOCKERHUB_USERNAME }}/hello-node:${{ github.sha }}
-                    ${{ vars.DOCKERHUB_USERNAME }}/hello-node:${{ github.ref }}
 
             
 
