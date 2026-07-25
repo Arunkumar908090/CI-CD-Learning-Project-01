@@ -20,8 +20,8 @@
 
         <node.version>v22.16.0</node.version>
 
-        <sonar.projectKey>node-app</sonar.projectKey>
-        <sonar.projectName>node-app</sonar.projectName>
+        <sonar.projectKey>node-app-1</sonar.projectKey>
+        <sonar.projectName>node-app-1</sonar.projectName>
     </properties>
 
     <build>
