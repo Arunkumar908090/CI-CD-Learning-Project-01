@@ -22,6 +22,10 @@
 
         <sonar.projectKey>node-app-1</sonar.projectKey>
         <sonar.projectName>node-app-1</sonar.projectName>
+        <sonar.sources>app.js,server.js</sonar.sources>
+        <sonar.tests>tests</sonar.tests>
+        <sonar.test.inclusions>tests/**/*.js</sonar.test.inclusions>
+        <sonar.exclusions>node_modules/**,coverage/**,reports/**</sonar.exclusions>
     </properties>
 
     <build>
