@@ -11,12 +11,24 @@
     <packaging>pom</packaging>
 
     <name>Node Application</name>
-    <description>Node.js application build using Maven</description>
+    <description>Node.js application using Maven as a build orchestrator</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Sonar Properties -->
+        <sonar.projectKey>node-app</sonar.projectKey>
+        <sonar.projectName>node-app</sonar.projectName>
+        <sonar.sources>.</sonar.sources>
+        <sonar.tests>tests</sonar.tests>
+        <sonar.inclusions>**/*.js</sonar.inclusions>
+        <sonar.exclusions>node_modules/**,coverage/**,reports/**</sonar.exclusions>
+        <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+    </properties>
 
     <build>
         <plugins>
 
-            <!-- Node.js & npm -->
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
@@ -62,7 +74,6 @@
 
             </plugin>
 
-            <!-- Sonar Maven Plugin -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
