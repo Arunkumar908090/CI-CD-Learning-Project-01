@@ -19,13 +19,14 @@
     "supertest": "^7.0.0"
   },
 
-   "jest": {
-    "collectCoverage": true,
-    "coverageDirectory": "coverage",
-    "coverageReporters": [
-      "lcov",
-      "text"
+  "jest": {
+   "collectCoverage": true,
+   "coverageDirectory": "coverage",
+   "coverageReporters": [
+     "lcov",
+     "text"
     ],
+  },
 
   "jest": {
     "reporters": [
