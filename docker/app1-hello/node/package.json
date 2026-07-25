@@ -1,20 +1,34 @@
 {
   "name": "hello-app-node",
   "version": "1.0.0",
+  "description": "Node.js Application",
   "main": "server.js",
+
   "scripts": {
     "start": "node server.js",
-    "test": "jest --ci --reporters=default --reporters=jest-junit"
+    "test": "jest --ci"
   },
-  "jest-junit": {
-    "outputDirectory": "./reports",
-    "outputName": "junit.xml"
-  },
+
   "dependencies": {
     "express": "^4.18.2"
   },
+
   "devDependencies": {
     "jest": "^30.0.5",
+    "jest-junit": "^16.0.0",
     "supertest": "^7.0.0"
+  },
+
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "reports",
+          "outputName": "junit.xml"
+        }
+      ]
+    ]
   }
 }
