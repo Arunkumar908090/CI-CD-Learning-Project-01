@@ -15,15 +15,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <!-- Sonar Properties -->
-        <sonar.projectKey>node-app</sonar.projectKey>
-        <sonar.projectName>node-app</sonar.projectName>
-        <sonar.sources>.</sonar.sources>
-        <sonar.tests>tests</sonar.tests>
-        <sonar.inclusions>**/*.js</sonar.inclusions>
-        <sonar.exclusions>node_modules/**,coverage/**,reports/**</sonar.exclusions>
-        <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
     </properties>
 
     <build>
