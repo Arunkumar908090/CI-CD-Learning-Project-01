@@ -6,7 +6,7 @@
 
   "scripts": {
     "start": "node server.js",
-    "test": "jest --ci"
+    "test": "jest --ci --coverage"
   },
 
   "dependencies": {
@@ -18,6 +18,14 @@
     "jest-junit": "^16.0.0",
     "supertest": "^7.0.0"
   },
+
+   "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
 
   "jest": {
     "reporters": [
